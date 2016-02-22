@@ -35,9 +35,6 @@ script:
     - npm run-script lint-travis
     - composer test-travis
 
-after_success:
-    - vendor/bin/coveralls --verbose
-
 notifications:
     email: false
 

@@ -4,11 +4,7 @@
 
     <rule ref="PSR2" />
 
-    <file>./src/</file>
-    <file>./loader/</file>
-    <file>./includes/</file>
-    <file>./tests/</file>
-    <file>./devaloka.php</file>
+    <file>./</file>
 
     <exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>

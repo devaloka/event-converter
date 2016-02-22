@@ -1,16 +1,15 @@
 {
-    "name"             : "devaloka/devaloka",
-    "description"      : "A WordPress plugin brings DI Container, Event Dispatcher to WordPress",
-    "type"             : "devaloka-muplugin",
+    "name"             : "devaloka/event-converter",
+    "description"      : "Interchangeably converts all WordPress action/filter to/from EventDispatcher's Event",
+    "type"             : "library",
     "keywords"         : [
         "wordpress",
-        "plugin",
-        "pimple",
-        "event-dispatcher",
-        "di",
-        "event"
+        "event",
+        "hook",
+        "action",
+        "filter"
     ],
-    "homepage"         : "https://github.com/devaloka/devaloka",
+    "homepage"         : "https://github.com/devaloka/event-converter",
     "license"          : [
         "MIT",
         "GPL-2.0",
@@ -30,54 +29,30 @@
         "email" : "devaloka@whizark.com",
         "issues": "https://github.com/devaloka/devaloka/issues",
         "wiki"  : "https://github.com/devaloka/devaloka/wiki",
-        "source": "https://github.com/devaloka/devaloka"
+        "source": "https://github.com/devaloka/event-converter"
     },
     "require"          : {
-        "php"                         : ">=5.5.9",
-        "devaloka/mu-plugin-installer": "~0.1.0",
-        "pimple/pimple"               : "~3.0",
-        "symfony/event-dispatcher"    : "~3.0",
-        "ecailles/null-object"        : "~1.0.0",
-        "ecailles/callable-object"    : "~1.0.0"
+        "php"                          : ">=5.5.9",
+        "pimple/pimple"                : "~3.0",
+        "symfony/event-dispatcher"     : "~3.0",
+        "devaloka/event-dispatcher"    : "~0.7.0",
+        "devaloka/dependency-injection": "~0.7.0",
+        "ecailles/callable-object"     : "~1.0.0"
     },
     "require-dev"      : {
-        "squizlabs/php_codesniffer": "^2.5.0",
-        "phpunit/phpunit"          : "^4.8 || ^5.1",
-        "mockery/mockery"          : "^0.9.4",
-        "brain/monkey"             : "^1.2.1",
-        "satooshi/php-coveralls"   : "^1.0.0"
-    },
-    "replace"          : {
-        "devaloka/dependency-injection": "self.version",
-        "devaloka/event-dispatcher"    : "self.version",
-        "devaloka/nav-menu"            : "self.version",
-        "devaloka/post-type"           : "self.version",
-        "devaloka/shortcode"           : "self.version",
-        "devaloka/sidebar"             : "self.version",
-        "devaloka/taxonomy"            : "self.version",
-        "devaloka/templating"          : "self.version",
-        "devaloka/translation"         : "self.version",
-        "devaloka/widget"              : "self.version"
+        "squizlabs/php_codesniffer": "^2.5.0"
     },
     "autoload"         : {
-        "exclude-from-classmap": [
-            "**/Tests/"
-        ]
-    },
-    "autoload-dev"     : {
         "psr-4": {
-            "Devaloka\\"       : "src/",
-            "Tests\\Devaloka\\": "tests/"
+            "Devaloka\\Component\\EventConverter\\": ""
         }
     },
     "scripts"          : {
         "test"       : [
-            "vendor/bin/phpcs --colors",
-            "vendor/bin/phpunit --colors=always"
+            "vendor/bin/phpcs --colors"
         ],
         "test-travis": [
-            "vendor/bin/phpcs --colors",
-            "vendor/bin/phpunit --colors=always --verbose --coverage-clover build/logs/clover.xml"
+            "vendor/bin/phpcs --colors"
         ]
     },
     "archive"          : {
@@ -88,21 +63,15 @@
             ".editorconfig",
             "package.json",
             "npm-shrinkwrap.json",
-            ".remarkignore",
             ".remarkrc",
-            "gulpfile.js",
             "composer.json",
             "phpcs.xml.dist",
-            "phpunit.xml.dist",
-            ".coveralls.yml",
-            "tests/",
             ".travis.yml"
         ]
     },
     "extra"            : {
-        "branch-alias"    : {
+        "branch-alias": {
             "dev-master": "0.7.x-dev"
-        },
-        "installer-loader": "loader/00-devaloka-loader.php"
+        }
     }
 }

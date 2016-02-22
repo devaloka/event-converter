@@ -1,72 +1,43 @@
-# Devaloka
-
+# Event Converter
+ 
 [![Latest Stable Version][stable-image]][stable-url]
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
 
-A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
+Interchangeably converts WordPress's action/filter to/from [EventDispatcher](https://github.com/devaloka/event-dispatcher)'s
+Event.
 
 ## Features
 
-*   DI Container ([Pimple](https://github.com/silexphp/Pimple))
-*   Event Dispatcher ([Symfony EventDispatcher Component](https://github.com/symfony/event-dispatcher))
+*   Interchangeably handle/listen/dispatch **all** WordPress actions/filters
+    as EventDispatcher's Events
 
-## Requirements
-
-*   [Pimple](https://github.com/silexphp/Pimple)
-*   [Symfony EventDispatcher Component](https://github.com/symfony/event-dispatcher)
+    *   WordPress's action/filter to WordPress's action/filter
+    *   WordPress's action/filter to EventDispatcher's Event
+    *   EventDispatcher's Event to WordPress's action/filter
+    *   EventDispatcher's Event to EventDispatcher's Event
 
 ## Installation
 
 1.  Install via Composer.
 
     ```sh
-    composer require devaloka/devaloka
+    composer require devaloka/event-converter
     ```
 
-## Composer Installer
+## Caveat
 
-*   [MU Plugin Installer](https://github.com/devaloka/mu-plugin-installer)
+*   `Event::stopPropagation()` doesn't work.
 
-## Components
+[stable-image]: https://poser.pugx.org/devaloka/event-converter/v/stable
+[stable-url]: https://packagist.org/packages/devaloka/event-converter
 
-*   [DependencyInjection](https://github.com/devaloka/dependency-injection)
-*   [EventDispatcher](https://github.com/devaloka/event-dispatcher)
-*   [NavMenu](https://github.com/devaloka/nav-menu)
-*   [PostType](https://github.com/devaloka/post-type)
-*   [Shortcode](https://github.com/devaloka/shortcode)
-*   [Sidebar](https://github.com/devaloka/sidebar)
-*   [Taxonomy](https://github.com/devaloka/taxonomy)
-*   [Widget](https://github.com/devaloka/widget)
+[unstable-image]: https://poser.pugx.org/devaloka/event-converter/v/unstable
+[unstable-url]: https://packagist.org/packages/devaloka/event-converter
 
-## Component Plugins
+[license-image]: https://poser.pugx.org/devaloka/event-converter/license
+[license-url]: https://packagist.org/packages/devaloka/event-converter
 
-*   [Event Converter](https://github.com/devaloka/devaloka-event-converter)
-*   [Plugin](https://github.com/devaloka/devaloka-plugin)
-*   [Templating](https://github.com/devaloka/devaloka-templating)
-*   [Theme](https://github.com/devaloka/devaloka-theme)
-*   [Transient](https://github.com/devaloka/devaloka-transient)
-*   [Translation](https://github.com/devaloka/devaloka-translation)
-*   View Component
-*   [WordPress](https://github.com/devaloka/devaloka-wp)
-
-## Plugins
-
-*   [Query Exporter](https://github.com/devaloka/devaloka-query-exporter)
-
-[stable-image]: https://poser.pugx.org/devaloka/devaloka/v/stable
-[stable-url]: https://packagist.org/packages/devaloka/devaloka
-
-[unstable-image]: https://poser.pugx.org/devaloka/devaloka/v/unstable
-[unstable-url]: https://packagist.org/packages/devaloka/devaloka
-
-[license-image]: https://poser.pugx.org/devaloka/devaloka/license
-[license-url]: https://packagist.org/packages/devaloka/devaloka
-
-[travis-image]: https://travis-ci.org/devaloka/devaloka.svg?branch=master
-[travis-url]: https://travis-ci.org/devaloka/devaloka
-
-[coveralls-image]: https://coveralls.io/repos/devaloka/devaloka/badge.svg?branch=master&service=github
-[coveralls-url]: https://coveralls.io/github/devaloka/devaloka?branch=master
+[travis-image]: https://travis-ci.org/devaloka/event-converter.svg?branch=master
+[travis-url]: https://travis-ci.org/devaloka/event-converter
